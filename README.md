@@ -50,7 +50,7 @@ Ai remote for LG webos tv's. Mediapipe framework is used for recognising and ret
 
 #### System_off
 
-![Unlocked](https://github.com/VedantMalgundkar/LG_Ai_remote/assets/129035372/1e33a9c2-3347-4243-957c-8b587b12c8ec)
+![System_off](https://github.com/VedantMalgundkar/LG_Ai_remote/assets/129035372/add9eb90-ce0b-46bd-9bf5-d620ec62a3d7)
 
 
 ## Run Locally

@@ -68,3 +68,87 @@ Install dependencies
   pip install -r requirements.txt
 ```
 
+
+## Directory Structure
+
+```
+    │  Ai_remote.py
+    │  accesskey.txt
+    |  requirements.txt
+    │  
+    ├─model
+        ├─Handsign_classifier
+            │  handsign_classifier_datav4.csv
+            |  Handsign_classifier_labelsv4.csv
+            │  handsign_classifierv4.hdf5
+            │  keypoint_classifierv4.tflite
+            |_ handsign_classifier.py
+           
+```
+#### Ai_remote.py
+This is a sample program for detecting hand signs.
+
+#### accesskey.txt
+This file will contain access key which is provided by tv for connection.
+
+#### handsign_classifier_datav4 & labelsv4
+"data" file contain data retrived by mediapipe framework and "labels" has names for specific hand sign.
+
+#### handsign_classifierv4.hdf5 & tflite
+hdf5 is tensorflow keras model and tflite quantized version of that model.
+
+
+## Data preprocessing
+
+This function is reponsible for preprocessing the data.
+````
+def pre_process_landmarks(landmrk_list):
+    temp_landmrk_list=copy.deepcopy(landmrk_list)
+    base_x,base_y=0,0
+    for id,landmrk in enumerate(temp_landmrk_list):
+        if id == 0:
+            base_x , base_y= landmrk[0],landmrk[1]
+
+        temp_landmrk_list[id][0]= temp_landmrk_list[id][0]-base_x
+        temp_landmrk_list[id][1]= temp_landmrk_list[id][1]-base_y
+
+````
+this much part of the code is just shifting all landmark points towords the origin.
+
+example : https://www.geogebra.org/m/uwyhhvss
+
+````
+    # convert to a one dimensional list
+    temp_landmrk_list = list(itertools.chain.from_iterable(temp_landmrk_list))
+
+    # finding maximum value
+    max_value=max(list(map(abs,temp_landmrk_list)))
+
+    # normalization
+    def normalize(n):
+        return n/max_value
+
+    temp_landmrk_list=list(map(normalize,temp_landmrk_list))
+
+    return temp_landmrk_list
+
+````
+In this part normalize() function is scaling down all shifted points in the range of 0 to 1.
+
+example : https://www.geogebra.org/m/qwj2v9sq
+
+In above geogebra slide after clicking the destination button we can see all shifted points are scaled down in the range of 0 to 1.
+
+We are scaling down image coordinates so that it becomes easy to train this preprocessed data to tensorflow keras model.
+
+
+### This video will give us the idea about preprocessing step.
+
+https://github.com/VedantMalgundkar/LG_Ai_remote/assets/129035372/186fa1b3-6a95-48da-ada6-549df8ef93c2
+
+
+
+
+
+
+

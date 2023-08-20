@@ -79,9 +79,9 @@ Install dependencies
     ├─model
         ├─Handsign_classifier
             │  handsign_classifier_datav4.csv
-            |  Handsign_classifier_labelsv4.csv
+            |  handsign_classifier_labelsv4.csv
             │  handsign_classifierv4.hdf5
-            │  keypoint_classifierv4.tflite
+            │  handsign_classifierv4.tflite
             |_ handsign_classifier.py
            
 ```
@@ -142,8 +142,7 @@ In above geogebra slide after clicking the destination button we can see all shi
 We are scaling down image coordinates so that it becomes easy to train this preprocessed data to tensorflow keras model.
 
 
-### This video will give us the idea about preprocessing step.
-
+### This video will give us the idea about preprocessing step
 https://github.com/VedantMalgundkar/LG_Ai_remote/assets/129035372/186fa1b3-6a95-48da-ada6-549df8ef93c2
 
 
@@ -151,7 +150,13 @@ https://github.com/VedantMalgundkar/LG_Ai_remote/assets/129035372/186fa1b3-6a95-
 
 https://www.kaggle.com/code/vedantanilmalgundkar/handsign-classification
 
+- Download "handsign-classification.ipynb" notebook.
 
+- Add your custom handsign data file.
+
+- Change "no_of_classes" according to types of hand signs present in your the data.
+
+- Download "handsign_classifierv4.tflite" file and replace it with old one.
 
 
 

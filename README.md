@@ -150,13 +150,16 @@ https://github.com/VedantMalgundkar/LG_Ai_remote/assets/129035372/186fa1b3-6a95-
 
 https://www.kaggle.com/code/vedantanilmalgundkar/handsign-classification
 
-- Download "handsign-classification.ipynb" notebook.
+if you want to add your custom handsign data then
 
-- Add your custom handsign data file.
+- Download "handsign-classification.ipynb" notebook from above link.
 
-- Change "no_of_classes" according to types of hand signs present in your the data.
+- Add your custom "handsign_classifier_datav4.csv" file to the directory.
 
-- Download "handsign_classifierv4.tflite" file and replace it with old one.
+- Change "no_of_classes" in the ipynb notebook, according to number of hand signs present in your the data.
 
+- Use new "handsign_classifierv4.tflite" file instead of the old one.
+
+- Change names in the "handsign_classifier_labelsv4.csv" according to your hand sign data.
 
 

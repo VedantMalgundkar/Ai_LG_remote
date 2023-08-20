@@ -147,6 +147,9 @@ We are scaling down image coordinates so that it becomes easy to train this prep
 https://github.com/VedantMalgundkar/LG_Ai_remote/assets/129035372/186fa1b3-6a95-48da-ada6-549df8ef93c2
 
 
+## Training model
+
+https://www.kaggle.com/code/vedantanilmalgundkar/handsign-classification
 
 
 

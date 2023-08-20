@@ -68,6 +68,20 @@ Install dependencies
   pip install -r requirements.txt
 ```
 
+## Connect to tv
+
+Run the Ai_remote.py file
+
+Enter "y" if you want to connect to tv and then enter ip address of your tv.
+
+![promt](https://github.com/VedantMalgundkar/LG_Ai_remote/assets/129035372/89a70d80-36fd-405f-978e-bd7b31cafddb)
+
+Accept this promt on the TV
+
+![IMG_20230820_151113](https://github.com/VedantMalgundkar/LG_Ai_remote/assets/129035372/aa38c50c-0e49-4f95-8a3a-cc4e20d8c8e1)
+
+you are good to go 👍
+
 
 ## Directory Structure
 

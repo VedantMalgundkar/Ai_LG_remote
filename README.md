@@ -53,6 +53,21 @@ Ai remote for LG webos tv's. Mediapipe framework is used for recognising and ret
 ![System_off](https://github.com/VedantMalgundkar/LG_Ai_remote/assets/129035372/add9eb90-ce0b-46bd-9bf5-d620ec62a3d7)
 
 
+
+# Connect to tv
+
+- Run the Ai_remote.py file
+
+- Enter "y" if you want to connect to tv and then enter ip address of your tv.
+
+![promt](https://github.com/VedantMalgundkar/LG_Ai_remote/assets/129035372/89a70d80-36fd-405f-978e-bd7b31cafddb)
+
+- Accept this promt on the TV
+
+![IMG_20230820_151113](https://github.com/VedantMalgundkar/LG_Ai_remote/assets/129035372/aa38c50c-0e49-4f95-8a3a-cc4e20d8c8e1)
+
+- you are good to go 👍
+
 ## Run Locally
 
 Clone the project
@@ -68,19 +83,6 @@ Install dependencies
   pip install -r requirements.txt
 ```
 
-## Connect to tv
-
-Run the Ai_remote.py file
-
-Enter "y" if you want to connect to tv and then enter ip address of your tv.
-
-![promt](https://github.com/VedantMalgundkar/LG_Ai_remote/assets/129035372/89a70d80-36fd-405f-978e-bd7b31cafddb)
-
-Accept this promt on the TV
-
-![IMG_20230820_151113](https://github.com/VedantMalgundkar/LG_Ai_remote/assets/129035372/aa38c50c-0e49-4f95-8a3a-cc4e20d8c8e1)
-
-you are good to go 👍
 
 
 ## Directory Structure
@@ -155,9 +157,23 @@ In above geogebra slide after clicking the destination button we can see all shi
 
 We are scaling down image coordinates so that it becomes easy to train this preprocessed data to tensorflow keras model.
 
-
 ### This video will give us the idea about preprocessing step
 https://github.com/VedantMalgundkar/LG_Ai_remote/assets/129035372/186fa1b3-6a95-48da-ada6-549df8ef93c2
+
+
+# Data collection
+
+You can create your own data for different hand signs detection and use it for model training.
+
+Once the "Handsign Recognition" window opens, press "h" on the keyboard. "Logging Hand Sign" mode will appear.
+
+Then press number between 0 to 9 to store specific hand sign which you will be showing onto the screen.
+
+That particular number will get stored in the "handsign_classifier_datav4" file followed by preprocessed hand sign coordinates.
+
+press "n" to take exit from the logging mode.
+
+
 
 
 ## Training model

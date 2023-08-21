@@ -213,6 +213,11 @@ if you want to add your custom handsign data then
 "Want to connect LG tv ? type "y" or leave it empty"
 
 just leave it empty while running the script.
+
+
+# License  
+
+LG_Ai_remote is under [MIT License](https://github.com/VedantMalgundkar/LG_Ai_remote/blob/main/LICENSE)
   
 
 

@@ -1,7 +1,7 @@
 
 # LG Ai Remote
 
-Ai remote for LG webos tv's. Mediapipe framework is used for recognising and retriving hand landmarks and futher on these landmarks tensorflow model is trained to detect handsigns.
+Ai remote for LG webos tv's. Mediapipe framework is used for recognising and retriving hand landmarks and futher on these landmarks tensorflow model is trained to detect hand signs.
 
 ## Acknowledgements
 

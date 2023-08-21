@@ -5,9 +5,9 @@ Ai remote for LG webos tv's. Mediapipe framework is used for recognising and ret
 
 ## Acknowledgements
 
- - [reference](https://github.com/kinivi/hand-gesture-recognition-mediapipe.git)
+ - [Reference](https://github.com/kinivi/hand-gesture-recognition-mediapipe.git)
  
- - [library for tv signal](https://github.com/supersaiyanmode/PyWebOSTV.git)
+ - [Library for tv signal](https://github.com/supersaiyanmode/PyWebOSTV.git)
 
 
 ## Demo
@@ -39,6 +39,13 @@ Ai remote for LG webos tv's. Mediapipe framework is used for recognising and ret
 #### Right
 
 ![Right](https://github.com/VedantMalgundkar/LG_Ai_remote/assets/129035372/9425fbf8-df9c-42db-9f53-19c311a4e189)
+
+## Locking and Unlocking feature
+
+Once you "Locked" the ai remote as you can see here you can't give any input signal to your tv , as you perform
+"Unlocked" handsign you can operate your tv.
+
+It is safety feature so no one can control tv behind your back or it can avoid unwanted tv signals.
 
 #### Locked
 
@@ -131,7 +138,8 @@ def pre_process_landmarks(landmrk_list):
 ````
 this much part of the code is just shifting all landmark points towords the origin.
 
-example : https://www.geogebra.org/m/uwyhhvss
+example : 
+- [Change of origin](https://www.geogebra.org/m/uwyhhvss)
 
 ````
     # convert to a one dimensional list
@@ -151,7 +159,9 @@ example : https://www.geogebra.org/m/uwyhhvss
 ````
 In this part normalize() function is scaling down all shifted points in the range of 0 to 1.
 
-example : https://www.geogebra.org/m/qwj2v9sq
+example : 
+- [Change of scale ( freeze coordinate version )](https://www.geogebra.org/m/tfvq3chv)
+- [Change of scale ( freeze image version )](https://www.geogebra.org/m/dks5g2ct)
 
 In above geogebra slide after clicking the destination button we can see all shifted points are scaled down in the range of 0 to 1.
 
@@ -165,13 +175,13 @@ https://github.com/VedantMalgundkar/LG_Ai_remote/assets/129035372/186fa1b3-6a95-
 
 You can create your own data for different hand signs detection and use it for model training.
 
-Once the "Handsign Recognition" window opens, press "h" on the keyboard. "Logging Hand Sign" mode will appear.
+- Once the "Handsign Recognition" window opens, press "h" on the keyboard. "Logging Hand Sign" mode will appear.
 
-Then press number between 0 to 9 to store specific hand sign which you will be showing onto the screen.
+- Then press number between 0 to 9 to store specific hand sign which you will be showing onto the screen.
 
-That particular number will get stored in the "handsign_classifier_datav4" file followed by preprocessed hand sign coordinates.
+- That particular number will get stored in the "handsign_classifier_datav4" file followed by preprocessed hand sign coordinates.
 
-press "n" to take exit from the logging mode.
+- press "n" to take exit from the logging mode.
 
 
 
@@ -191,5 +201,18 @@ if you want to add your custom handsign data then
 - Use new "handsign_classifierv4.tflite" file instead of the old one.
 
 - Change names in the "handsign_classifier_labelsv4.csv" according to your hand sign data.
+
+
+## FAQ
+
+#### I don't have LG WebOS tv so can I still see the hand sign predictions ?  
+
+```bash
+: Yes!!
+```
+"Want to connect LG tv ? type "y" or leave it empty"
+
+just leave it empty while running the script.
+  
 
 

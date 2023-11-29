@@ -312,9 +312,9 @@ def draw_info_text(image, brect, handedness, hand_sign_text):
 
 def main():
 
-    connect_button = bool(input('Want to connect LG tv ? type "y" or leave it empty : '))
+    connect_button = input('Want to connect LG tv ? type "y" or leave it empty : ')
 
-    if connect_button:
+    if connect_button=='y':
         ip = input('Enter ip address of your tv : ')
     else:
         print('But still you can see the handsign predictions.')
@@ -322,7 +322,7 @@ def main():
     signal = False
 
     try:
-        if connect_button == True:
+        if connect_button == 'y':
             store = {}
             if len(store) == 0 and os.path.getsize('accesskey.txt')!= 0:
 
@@ -426,8 +426,8 @@ def main():
         number,mode = select_mode(key,mode)
 
         # Camera capture
-        res, img= cap.read()
-        if res == False:
+        result, img = cap.read()
+        if not result:
             break
         img = cv.flip(img,1)
         debug_img= copy.deepcopy(img)
@@ -447,6 +447,7 @@ def main():
                 # landmark_list calculation
                 landmark_list =calc_landmark_list(debug_img,hand_landmarks)
 
+
                 # conversion to relative coordinates / normalized coordinates
                 pre_process_handlandmarks_list= pre_process_landmarks(landmark_list)
 
@@ -459,7 +460,7 @@ def main():
 
                 if signal:
                     if locking_flag:
-                        if hand_sign_label == 0:  # Home signal
+                        if hand_sign_label == 0:# Home signal
                             count+=1
                             if count == detection_time:
                                 try:
@@ -593,13 +594,14 @@ def main():
 
                 debug_img = draw_bounding_rect(use_brect, debug_img, brect)
                 debug_img = draw_landmarks(debug_img, landmark_list)
+
                 if hand_sign_label is not None:
                     debug_img = draw_info_text(debug_img,brect,handedness,handsign_classifier_labels[hand_sign_label])
 
 
         debug_img = draw_info(debug_img, fps, mode, number)
 
-        cv.imshow('Handsign Recoginition',debug_img)
+        cv.imshow('Handsign Recognition',debug_img)
 
     cap.release()
     cv.destroyAllWindows()

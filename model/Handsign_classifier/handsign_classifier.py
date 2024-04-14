@@ -2,11 +2,8 @@ import numpy as np
 import tensorflow as tf
 
 class HandsignClassifier():
-    def __init__(self,
-                 model_path="model/Handsign_classifier/handsign_classifierv4.tflite",
-                 num_threads=1):
-        self.interpreter = tf.lite.Interpreter(model_path=model_path,
-                                               num_threads=num_threads)
+    def __init__(self,model_path="model/Handsign_classifier/handsign_classifierv4.tflite",num_threads=1):
+        self.interpreter = tf.lite.Interpreter(model_path=model_path,num_threads=num_threads)
 
         self.interpreter.allocate_tensors()
         self.input_details = self.interpreter.get_input_details()
